@@ -1,0 +1,15 @@
+---
+-
+  hosts: 172.31.30.158
+  tasks:
+  - name: update and upgrade apt-packages
+    apt:
+      upgrade: yes
+      update_cache: yes
+      cache_valid_time: 86400 #it will always check for update once in a day
+  - name: install jdk 11
+    apt:
+      name: openjdk-11-jdk
+      state: present
+  
+    
